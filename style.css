@@ -51,6 +51,13 @@ projet {
     font-size: 18px;
 }
 
+highlight {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 18px;
+}
+
 /* --- Fond Animé --- */
 .area {
     position: fixed;
