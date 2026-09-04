@@ -341,7 +341,7 @@ nav ul a:hover, nav ul a.active {
 
 .config-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 25px;
 }
 
