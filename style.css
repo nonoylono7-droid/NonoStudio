@@ -503,6 +503,24 @@ footer {
     transform: translateY(0);
 }
 
+/* --- Projets --- */
+.conteneur-bloc {
+  display: flex;            /* Aligne le texte et l'image côte à côte */
+  align-items: flex-start;  /* Aligne l'image sur le haut du texte */
+  gap: 30px;                /* Crée un espace de 30px entre le texte et l'image */
+}
+
+.bloc-texte {
+  flex: 1;                  /* Permet au texte de prendre tout l'espace disponible à gauche */
+}
+
+.image-droite {
+  width: 250px;             /* Ajustez la largeur de votre image selon vos besoins */
+  height: auto;             /* Conserve les proportions de l'image */
+  border-radius: 15px;      /* Optionnel : pour garder les bords arrondis vus précédemment */
+}
+
+
 /* --- Responsive Mobile --- */
 @media (max-width: 768px) {
     header { padding: 12px 15px; }
