@@ -519,7 +519,19 @@ footer {
   height: auto;             /* Conserve les proportions de l'image */
   border-radius: 15px;      /* Optionnel : pour garder les bords arrondis vus précédemment */
 }
+/* --- RESPONSIVE (pour les écrans de moins de 768px) --- */
+@media (max-width: 768px) {
+  .conteneur-bloc {
+    flex-direction: column; /* Aligne les éléments verticalement (le texte puis l'image) */
+    gap: 20px;              /* Réduit un peu l'espace sur petit écran */
+  }
 
+  .image-droite {
+    width: 100%;            /* L'image prend toute la largeur disponible sur mobile */
+    max-width: 350px;       /* Évite que l'image ne devienne trop géante */
+    align-self: center;     /* Centre l'image horizontalement sous le texte */
+  }
+}
 
 /* --- Responsive Mobile --- */
 @media (max-width: 768px) {
