@@ -109,6 +109,18 @@
                       .then(r => r.json())
                       .then(d => {
                         document.getElementById("nn-users").textContent = d.users ?? "–";
+                      })
+                      .catch(() => {});
+                    </script>
+                    
+                    </a>
+                        
+                    <a href="https://nonote.onrender.com" target="_blank" class="btn-secondary">
+                    <p><span id="nn-users">…</span> utilisateurs · NoNote v<span id="nn-ver">…</span></p>
+                    <script>
+                    fetch("https://qhulcfkadtianzmcarxe.supabase.co/functions/v1/stats")
+                      .then(r => r.json())
+                      .then(d => {
                         document.getElementById("nn-ver").textContent = d.version ?? "–";
                       })
                       .catch(() => {});
