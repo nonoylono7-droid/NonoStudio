@@ -11,6 +11,7 @@
 </head>
 <body>
 
+    <!-- Fond animé -->
     <div class="area">
         <ul class="circles">
             <li></li><li></li><li></li><li></li><li></li>
@@ -18,10 +19,11 @@
         </ul>
     </div>
 
+    <!-- Navigation -->
     <header>
         <nav>
-            <div class="logo" style="display: flex; align-items: center; gap: 10px;"> 
-                <img src="favicon.png" alt="Mon Logo" width="50" style="display: block;"> 
+            <div class="logo">
+                <img src="favicon.png" alt="Mon Logo" width="50">
                 <div>
                     NonoStudio<span class="author-tag">by Nonoylono7</span>
                 </div>
@@ -37,144 +39,202 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="version-badge animate-pop-in">
-                <span class="v-tag">NonoStudio</span>
-                <span class="v-date">Mise à jour : Novembre 2026</span>
-            </div>
+    <main>
 
-            <h1 class="animate-pop-in delay-1">Trouvez tout ce que vous avez besoin avec<br><span class="highlight">NonoStudio</span></h1>
-            <p class="animate-pop-in delay-2">Un studio crée par <strong>Nonoylono7</strong> pour le développement, la création de jeux, et plein d'autres projets.</p>
-            
-            <div class="hero-buttons animate-pop-in delay-2">
-                <a href="https://eh-service-bot.onrender.com/" target="_blank" class="btn-main">Découvrir EH Service Bot</a>
-                <a href="https://discord.gg/Er6xKN7zth" target="_blank" class="btn-secondary">💬 Nous contacter</a>
-            </div>
-        </div>
-    </section>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="version-badge animate-pop-in">
+                    <span class="v-tag">NonoStudio</span>
+                    <span class="v-date">Mise à jour : Novembre 2026</span>
+                </div>
 
-    <section id="a-propos" class="guide-section">
-        <h2 class="section-title">À propos</h2>
+                <h1 class="animate-pop-in delay-1">Trouvez tout ce que vous avez besoin avec<br><span class="highlight">NonoStudio</span></h1>
+                <p class="animate-pop-in delay-2">Un studio crée par <strong>Nonoylono7</strong> pour le développement, la création de jeux, et plein d'autres projets.</p>
 
-        <div class="about-card scroll-animate">
-            <h3>❔ Qu'est-ce que NonoStudio ?</h3>
-            <p>
-                <nono>NonoStudio</nono> est un groupe de développement et de création de jeux fondé par <strong>Nonoylono7</strong>. 
-                Vous pourrez retrouver différents projets comme <projet>EH Service Bot</projet> pour vos serveurs discord rp, ou d'autres programmes utiles pour votre quotidien.<div></div>
-            </p>
-        </div>
-
-    <section id="nos-projets" class="guide-section">
-        <h2 class="section-title">Nos différents projets :</h2>
-        <p class="section-subtitle">Voici les différents projets de <nono>NonoStudio</nono></p>
-
-            <div class="config-card scroll-animate">
-                <img src="EH Service Bot logo.JPEG" alt="EH Logo" width="50" style="border-radius: 10px;">
-                <h2>EH Service Bot</h2>
-                <h3>Un bot Discord complet pour votre serveur RP (emergency hamburg)</h3>
-                <p>EH Service Bot est un bot spécialisé pour la gestion de votre serveur Discord Emergency Hamburg.<br>Grâce à son panneau de configuration interactif (Slash Commands & Menus déroulants), il : <br>- Automatise l'affichage de vos salons,<br>- Gère un système de carte d'identité Roblox/Discord synchronisée inter-serveurs avec vérification,<br>- Vous permet de déclencher des alertes rouges,<br>- Gérer la modération (warns, clear, lock) et plein d'autres fonctionnalités.
-</p>
-                 <br><br> 
-                    <div class="hero-buttons animate-pop-in delay-2">
+                <div class="hero-buttons animate-pop-in delay-2">
                     <a href="https://eh-service-bot.onrender.com/" target="_blank" class="btn-main">Découvrir EH Service Bot</a>
-                    <a href="https://discord.com/oauth2/authorize?client_id=1525150043508707328&permissions=8&integration_type=0&scope=applications.commands+bot" target="_blank" class="btn-secondary">Inviter le bot</a>
+                    <a href="https://discord.gg/Er6xKN7zth" target="_blank" class="btn-secondary">💬 Nous contacter</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- À propos -->
+        <section id="a-propos" class="guide-section">
+            <h2 class="section-title">À propos</h2>
+
+            <div class="about-card scroll-animate">
+                <h3>❔ Qu'est-ce que NonoStudio ?</h3>
+                <p>
+                    <span class="nono">NonoStudio</span> est un groupe de développement et de création de jeux fondé par <strong>Nonoylono7</strong>.
+                    Vous pourrez retrouver différents projets comme <span class="projet">EH Service Bot</span> pour vos serveurs discord rp, ou d'autres programmes utiles pour votre quotidien.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projets -->
+        <section id="nos-projets" class="guide-section">
+            <h2 class="section-title">Nos différents projets :</h2>
+            <p class="section-subtitle">Voici les différents projets de <span class="nono">NonoStudio</span></p>
+
+            <div class="projects-list">
+
+                <!-- ===== Projet : EH Service Bot ===== -->
+                <article class="project-card scroll-animate">
+                    <div class="project-info">
+                        <div class="project-head">
+                            <img src="EH Service Bot logo.JPEG" alt="EH Logo" class="project-logo">
+                            <h2>EH Service Bot</h2>
+                        </div>
+                        <h3>Un bot Discord complet pour votre serveur RP (emergency hamburg)</h3>
+                        <p>EH Service Bot est un bot spécialisé pour la gestion de votre serveur Discord Emergency Hamburg.<br>Grâce à son panneau de configuration interactif (Slash Commands & Menus déroulants), il : <br>- Automatise l'affichage de vos salons,<br>- Gère un système de carte d'identité Roblox/Discord synchronisée inter-serveurs avec vérification,<br>- Vous permet de déclencher des alertes rouges,<br>- Gérer la modération (warns, clear, lock) et plein d'autres fonctionnalités.</p>
+
+                        <div class="project-actions">
+                            <a href="https://eh-service-bot.onrender.com/" target="_blank" class="btn-main">Découvrir EH Service Bot</a>
+                            <a href="https://discord.com/oauth2/authorize?client_id=1525150043508707328&permissions=8&integration_type=0&scope=applications.commands+bot" target="_blank" class="btn-secondary">Inviter le bot</a>
+                        </div>
                     </div>
-            </div>
 
-            <br>
-        
-            <div class="config-card scroll-animate">
-                <img src="NoNote logo.png" alt="NoNote Logo" width="50" style="border-radius: 10px;">
-                <h2>NoNote (New !)</h2>
-                <h3>Votre emploi du temps dans votre poche.</h3>
-                <p>NoNote est un agenda qui vous permet de gérer votre semaine. Interface minimaliste, simple mais complet, il vous suffit de clique sur l'agenda et le tour est joué ! Le tout gratuitement.<img src="NoNote Exemple Mobile.jpg" alt="NoNote Exemple Mobile" width="300" style="border-radius: 10px;"></p>
-                 <br><br>
-                    <div class="hero-buttons animate-pop-in delay-2">
-                    <a href="https://nonote.onrender.com" target="_blank" class="btn-main">Découvrir NoNote</a>
-                    <a target="_blank" class="btn-secondary">
-                    · <span id="nn-users">…</span> utilisateurs
-                    <script>
-                    fetch("https://qhulcfkadtianzmcarxe.supabase.co/functions/v1/stats")
-                      .then(r => r.json())
-                      .then(d => {
-                        document.getElementById("nn-users").textContent = d.users ?? "–";
-                      })
-                      .catch(() => {});
-                    </script>
-                    
-                    </a>
-                        
-                    <a target="_blank" class="btn-secondary">
-                    · NoNote v<span id="nn-ver">…</span>
-                    <script>
-                    fetch("https://qhulcfkadtianzmcarxe.supabase.co/functions/v1/stats")
-                      .then(r => r.json())
-                      .then(d => {
-                        document.getElementById("nn-ver").textContent = d.version ?? "–";
-                      })
-                      .catch(() => {});
-                    </script>
-                    
-                    </a>
+                    <!-- Pour ajouter un carrousel à EH Service Bot, décommente ce bloc :
+                    <div class="carousel" data-carousel aria-label="Captures d'écran d'EH Service Bot">
+                        <div class="carousel-track">
+                            <figure class="carousel-slide"><img src="eh-1.png" alt="EH Service Bot - capture 1" loading="lazy"></figure>
+                        </div>
+                        <button class="carousel-btn prev" type="button" aria-label="Image précédente">‹</button>
+                        <button class="carousel-btn next" type="button" aria-label="Image suivante">›</button>
+                        <div class="carousel-dots"></div>
                     </div>
+                    -->
+                </article>
+
+                <!-- ===== Projet : NoNote ===== -->
+                <article class="project-card has-media scroll-animate">
+                    <div class="project-info">
+                        <div class="project-head">
+                            <img src="NoNote logo.png" alt="NoNote Logo" class="project-logo">
+                            <h2>NoNote (New !)</h2>
+                        </div>
+                        <h3>Votre emploi du temps dans votre poche.</h3>
+                        <p>NoNote est un agenda qui vous permet de gérer votre semaine. Interface minimaliste, simple mais complet, il vous suffit de clique sur l'agenda et le tour est joué ! Le tout gratuitement.</p>
+
+                        <div class="project-actions">
+                            <a href="https://nonote.onrender.com" target="_blank" class="btn-main">Découvrir NoNote</a>
+                            <span class="stat-pill">· <span id="nn-users">…</span> utilisateurs</span>
+                            <span class="stat-pill">· NoNote v<span id="nn-ver">…</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Carrousel NoNote : 1 <figure> = 1 image.
+                         Pour ajouter une image, copie une ligne <figure> et change le src / alt. -->
+                    <div class="carousel" data-carousel aria-label="Captures d'écran de NoNote">
+                        <div class="carousel-track">
+                            <figure class="carousel-slide"><img src="NoNote Exemple Mobile.jpg" alt="NoNote Exemple Mobile" loading="lazy"></figure>
+                            <!-- <figure class="carousel-slide"><img src="nonote-2.jpg" alt="NoNote Exemple 2" loading="lazy"></figure> -->
+                            <!-- <figure class="carousel-slide"><img src="nonote-3.jpg" alt="NoNote Exemple 3" loading="lazy"></figure> -->
+                        </div>
+                        <button class="carousel-btn prev" type="button" aria-label="Image précédente">‹</button>
+                        <button class="carousel-btn next" type="button" aria-label="Image suivante">›</button>
+                        <div class="carousel-dots"></div>
+                    </div>
+                </article>
+
             </div>
+        </section>
 
-            <br><br> 
-    </section>
+        <!-- Contacts -->
+        <section id="contacts" class="commands">
+            <h2 class="section-title">Contacts</h2>
 
-    <section id="contacts" class="commands">
-        <h2 class="section-title">Contacts</h2>
-        
-        <div class="commands-grid">
-            <div class="command-card scroll-animate">
-                <div class="command-header">
-                    <span class="command-slash">/</span>
-                    <h3>Nonoylono7 <span class="arg">EH Service Bot</span></h3>
+            <div class="commands-grid">
+                <div class="command-card scroll-animate">
+                    <div>
+                        <div class="command-header">
+                            <span class="command-slash">/</span>
+                            <h3>Nonoylono7 <span class="arg">EH Service Bot</span></h3>
+                        </div>
+                        <p>Créateur de NonoStudio.</p>
+                        <p class="contact-line"><span class="contact-label">Email : </span>nonoylono7@gmail.com</p>
+                        <p class="contact-line"><span class="contact-label">Discord : </span>nonoylono7</p>
+                        <p class="contact-line"><span class="contact-label">Roblox : </span>@yllono</p>
+                    </div>
+                    <div class="command-footer">
+                        <span class="perm perm-admin">Créateur</span>
+                        <span class="perm perm-mod">Développeur</span>
+                    </div>
                 </div>
-                <p>Créateur de NonoStudio.</p>
-                <p><h4>Email : </h4>nonoylono7@gmail.com</p>
-                <p><h4>Discord : </h4>nonoylono7</p>
-                <p><h4>Roblox : </h4>@yllono</p>
-                <div class="command-footer">
-                    <span class="perm perm-admin">Créateur</span>
-                    <span class="perm perm-mod">Développeur</span>
+
+                <div class="command-card scroll-animate">
+                    <div>
+                        <div class="command-header">
+                            <span class="command-slash">/</span>
+                            <h3>ConstantinZ12</h3>
+                        </div>
+                        <p>Super VIP de NonoStudio</p>
+                        <p class="contact-line"><span class="contact-label">Roblox : </span>@constantinZ12</p>
+                    </div>
+                    <div class="command-footer">
+                        <span class="perm perm-mod">VIP</span>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="command-card scroll-animate">
-                <div class="command-header">
-                    <span class="command-slash">/</span>
-                    <h3>ConstantinZ12</h3>
-                </div>
-                <p>Super VIP de NonoStudio</p>
-                <p><h4>Roblox : </h4>@constantinZ12</p>
-                <div class="command-footer">
-                    <span class="perm perm-mod">VIP</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
+    </main>
 
     <a href="https://top.gg/fr/bot/1525150043508707328" target="_blank" class="btn-vote-floating" title="Voter pour le bot sur Top.gg">
         ⭐ Voter pour EH Service Bot (Top.gg)
     </a>
 
     <footer>
-        <p>&copy; 2026 NonoStudio. Crée par <strong>Nonoylono7</strong>.
+        <p>&copy; 2026 NonoStudio. Crée par <strong>Nonoylono7</strong>.</p>
     </footer>
 
     <script>
-        const cards = document.querySelectorAll('.scroll-animate');
+        /* Apparition au scroll */
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('animate-in');
             });
         });
-        cards.forEach(card => observer.observe(card));
+        document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+
+        /* Stats NoNote (un seul appel) */
+        fetch("https://qhulcfkadtianzmcarxe.supabase.co/functions/v1/stats")
+            .then(r => r.json())
+            .then(d => {
+                document.getElementById("nn-users").textContent = d.users ?? "–";
+                document.getElementById("nn-ver").textContent = d.version ?? "–";
+            })
+            .catch(() => {});
+
+        /* Carrousels : fonctionne pour tout bloc [data-carousel] */
+        document.querySelectorAll('[data-carousel]').forEach(carousel => {
+            const track = carousel.querySelector('.carousel-track');
+            const slides = [...track.children];
+            const dotsBox = carousel.querySelector('.carousel-dots');
+            const prev = carousel.querySelector('.prev');
+            const next = carousel.querySelector('.next');
+
+            if (slides.length < 2) { carousel.classList.add('single'); return; }
+
+            const dots = slides.map((_, i) => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.setAttribute('aria-label', 'Image ' + (i + 1));
+                b.addEventListener('click', () => goTo(i));
+                dotsBox.appendChild(b);
+                return b;
+            });
+
+            const current = () => Math.round(track.scrollLeft / track.clientWidth);
+            const goTo = i => track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+            const update = () => dots.forEach((d, i) => d.classList.toggle('active', i === current()));
+
+            prev.addEventListener('click', () => goTo((current() - 1 + slides.length) % slides.length));
+            next.addEventListener('click', () => goTo((current() + 1) % slides.length));
+            track.addEventListener('scroll', update, { passive: true });
+            update();
+        });
     </script>
 </body>
 </html>
