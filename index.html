@@ -23,12 +23,13 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="favicon.png" alt="Mon Logo" width="50">
+                <img src="favicon.png" alt="Mon Logo" width="50" height="50">
                 <div>
                     NonoStudio<span class="author-tag">by Nonoylono7</span>
                 </div>
             </div>
-            <ul>
+            <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <ul id="nav-links">
                 <li><a href="#" class="active">Accueil</a></li>
                 <li><a href="#a-propos">A propos</a></li>
                 <li><a href="#nos-projets">Nos Projets</a></li>
@@ -83,7 +84,7 @@
                 <article class="project-card scroll-animate">
                     <div class="project-info">
                         <div class="project-head">
-                            <img src="EH Service Bot logo.JPEG" alt="EH Logo" class="project-logo">
+                            <img src="EH Service Bot logo.JPEG" alt="EH Logo" class="project-logo" width="50" height="50">
                             <h2>EH Service Bot</h2>
                         </div>
                         <h3>Un bot Discord complet pour votre serveur RP (emergency hamburg)</h3>
@@ -97,11 +98,13 @@
 
                     <!-- Pour ajouter un carrousel à EH Service Bot, décommente ce bloc :
                     <div class="carousel" data-carousel aria-label="Captures d'écran d'EH Service Bot">
-                        <div class="carousel-track">
-                            <figure class="carousel-slide"><img src="eh-1.png" alt="EH Service Bot - capture 1" loading="lazy"></figure>
+                        <div class="carousel-stage">
+                            <div class="carousel-track" tabindex="0">
+                                <figure class="carousel-slide"><img src="eh-1.png" alt="EH Service Bot - capture 1" loading="lazy"></figure>
+                            </div>
+                            <button class="carousel-btn prev" type="button" aria-label="Image précédente">‹</button>
+                            <button class="carousel-btn next" type="button" aria-label="Image suivante">›</button>
                         </div>
-                        <button class="carousel-btn prev" type="button" aria-label="Image précédente">‹</button>
-                        <button class="carousel-btn next" type="button" aria-label="Image suivante">›</button>
                         <div class="carousel-dots"></div>
                     </div>
                     -->
@@ -111,7 +114,7 @@
                 <article class="project-card has-media scroll-animate">
                     <div class="project-info">
                         <div class="project-head">
-                            <img src="NoNote logo.png" alt="NoNote Logo" class="project-logo">
+                            <img src="NoNote logo.png" alt="NoNote Logo" class="project-logo" width="50" height="50">
                             <h2>NoNote (New !)</h2>
                         </div>
                         <h3>Votre emploi du temps dans votre poche.</h3>
@@ -127,13 +130,14 @@
                     <!-- Carrousel NoNote : 1 <figure> = 1 image.
                          Pour ajouter une image, copie une ligne <figure> et change le src / alt. -->
                     <div class="carousel" data-carousel aria-label="Captures d'écran de NoNote">
-                        <div class="carousel-track">
-                            <figure class="carousel-slide"><img src="NoNote Exemple Mobile.jpg" alt="NoNote Exemple Mobile" loading="lazy"></figure>
-                            <figure class="carousel-slide"><img src="NoNote Exemple PC.png" alt="NoNote Exemple PC" loading="lazy"></figure>
-                            <!-- <figure class="carousel-slide"><img src="nonote-3.jpg" alt="NoNote Exemple 3" loading="lazy"></figure> -->
+                        <div class="carousel-stage">
+                            <div class="carousel-track" tabindex="0">
+                                <figure class="carousel-slide"><img src="NoNote Exemple Mobile.jpg" alt="NoNote Exemple Mobile"></figure>
+                                <figure class="carousel-slide"><img src="NoNote Exemple PC.png" alt="NoNote Exemple PC" loading="lazy"></figure>
+                            </div>
+                            <button class="carousel-btn prev" type="button" aria-label="Image précédente">‹</button>
+                            <button class="carousel-btn next" type="button" aria-label="Image suivante">›</button>
                         </div>
-                        <button class="carousel-btn prev" type="button" aria-label="Image précédente">‹</button>
-                        <button class="carousel-btn next" type="button" aria-label="Image suivante">›</button>
                         <div class="carousel-dots"></div>
                     </div>
                 </article>
@@ -215,6 +219,19 @@
             const prev = carousel.querySelector('.prev');
             const next = carousel.querySelector('.next');
 
+            /* La hauteur suit l'image affichée (portrait mobile / paysage PC) */
+            const fitHeight = () => {
+                const img = slides[current()].querySelector('img');
+                if (img && img.offsetHeight) track.style.height = img.offsetHeight + 'px';
+            };
+            const current = () => Math.round(track.scrollLeft / track.clientWidth) || 0;
+            slides.forEach(s => {
+                const img = s.querySelector('img');
+                if (img) img.addEventListener('load', fitHeight);
+            });
+            window.addEventListener('resize', fitHeight);
+            fitHeight();
+
             if (slides.length < 2) { carousel.classList.add('single'); return; }
 
             const dots = slides.map((_, i) => {
@@ -226,15 +243,28 @@
                 return b;
             });
 
-            const current = () => Math.round(track.scrollLeft / track.clientWidth);
             const goTo = i => track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
-            const update = () => dots.forEach((d, i) => d.classList.toggle('active', i === current()));
+            const update = () => {
+                dots.forEach((d, i) => d.classList.toggle('active', i === current()));
+                fitHeight();
+            };
 
             prev.addEventListener('click', () => goTo((current() - 1 + slides.length) % slides.length));
             next.addEventListener('click', () => goTo((current() + 1) % slides.length));
             track.addEventListener('scroll', update, { passive: true });
             update();
         });
+
+        /* Menu mobile */
+        const toggle = document.querySelector('.nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const setMenu = open => {
+            navLinks.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open);
+            toggle.textContent = open ? '✕' : '☰';
+        };
+        toggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
     </script>
 </body>
 </html>
